@@ -16,12 +16,12 @@ class Doctor
     Appointment.new(patient, self, date)
   end
 
-  def songs
-    Song.all.select {|song| song.artist == self}
+  def appointments
+    Appointment.all.select {|doctor| appointment.doctor == self}
   end
 
-  def genres
-    self.songs.collect {|song| song.genre}
+  def patients
+    self.appointments.collect {|appointment| appointment.patient}
   end
 
 
